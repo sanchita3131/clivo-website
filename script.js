@@ -56,22 +56,58 @@ function animC(){
 const fo=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');fo.unobserve(e.target)}})},{threshold:.08});
 function ob(el){if(!el)return;Array.from(el.children).forEach((c,i)=>{c.classList.add('fi');c.style.transitionDelay=i*.06+'s';fo.observe(c)})}
 
-// ====== BUILD DROPDOWN (nested: categories → products) ======
+// ====== BUILD DROPDOWN (3-level: Category → Series → Products) ======
 function buildDropdown(){
  const dd=document.getElementById('prodDD');
  if(!dd||!D)return;
  dd.innerHTML=D.categories.map(c=>`
   <li class="has-sub">
-   <a href="products.html">${c.icon} ${c.name} <span style="float:right;opacity:.4;font-size:10px;">▸</span></a>
+   <a href="products.html">${c.icon} ${c.name}</a>
    <ul class="dd-sub">
-    ${c.products.map(p=>`<li><a href="products.html">${p.name}</a></li>`).join('')}
+    ${c.series.map(s=>`
+     <li class="has-sub-sub">
+      <a href="products.html">${s.name}</a>
+      <ul class="dd-sub-sub">
+       ${s.products.map(p=>`<li><a href="products.html">${p}</a></li>`).join('')}
+      </ul>
+     </li>
+    `).join('')}
    </ul>
   </li>
  `).join('');
- // Fix mobile clicks for has-sub
+ // Smart positioning + hover management (class-based, no CSS :hover conflict)
+ const subs=dd.querySelectorAll('.has-sub,.has-sub-sub');
+ subs.forEach(item=>{
+  const sub=item.querySelector('.dd-sub')||item.querySelector('.dd-sub-sub');
+  if(!sub)return;
+  let hideTimer;
+
+  const show=()=>{
+   clearTimeout(hideTimer);
+   const r=item.getBoundingClientRect();
+   const w=parseInt(getComputedStyle(sub).minWidth)||320;
+   sub.classList.toggle('dd-left',r.right+w>window.innerWidth);
+   sub.classList.add('sub-show');
+  };
+  const hide=()=>{
+   hideTimer=setTimeout(()=>sub.classList.remove('sub-show'),120);
+  };
+
+  item.addEventListener('mouseenter',show);
+  item.addEventListener('mouseleave',hide);
+  sub.addEventListener('mouseenter',()=>clearTimeout(hideTimer));
+  sub.addEventListener('mouseleave',()=>sub.classList.remove('sub-show'));
+ });
+
+ // Mobile clicks for all levels
  if(window.innerWidth<=768){
-  dd.querySelectorAll('.has-sub>a').forEach(a=>{
-   a.addEventListener('click',function(e){e.preventDefault();this.parentElement.classList.toggle('active-mobile')});
+  dd.querySelectorAll('.has-sub>a, .has-sub-sub>a').forEach(a=>{
+   a.addEventListener('click',function(e){
+    const p=this.parentElement;
+    if(p.classList.contains('has-sub')||p.classList.contains('has-sub-sub')){
+     e.preventDefault();p.classList.toggle('active-mobile');
+    }
+   });
   });
  }
 }
@@ -80,7 +116,9 @@ function buildDropdown(){
 function renderFooterProducts(){
  const el=document.getElementById('fp');
  if(!el||!D)return;
- el.innerHTML=D.categories.flatMap(c=>c.products.map(p=>`<li><a href="products.html">${p.name}</a></li>`)).join('');
+ el.innerHTML=D.categories.flatMap(c=>
+  c.series.flatMap(s=>s.products.map(p=>`<li><a href="products.html">${p}</a></li>`))
+ ).join('');
 }
 
 // ====== INDUSTRIES ======
@@ -131,8 +169,12 @@ function renderTabs(){
 function showProducts(id){
  const pg=document.getElementById('pg');if(!pg||!D)return;
  const cat=D.categories.find(c=>c.id===id);
- if(!cat||!cat.products.length){pg.innerHTML='<p style="text-align:center;grid-column:1/-1;padding:32px;color:var(--gray-400);">No products in this category.</p>';return}
- pg.innerHTML=cat.products.map(p=>`<div class="pc"><img src="images/${p.image}" alt="${p.name}" loading="lazy"><div class="pc-bd"><h3>${p.name}</h3><p>${p.description}</p>${p.featured?'<span class="pb">★ Featured</span>':''}</div></div>`).join('');
+ if(!cat||!cat.series||!cat.series.length){pg.innerHTML='<p style="text-align:center;grid-column:1/-1;padding:32px;color:var(--gray-400);">No products in this category.</p>';return}
+ // Flatten series into individual products
+ const allProducts=[];
+ cat.series.forEach(s=>s.products.forEach(p=>allProducts.push({name:p,series:s.name})));
+ if(!allProducts.length){pg.innerHTML='<p style="text-align:center;grid-column:1/-1;padding:32px;color:var(--gray-400);">No products in this category.</p>';return}
+ pg.innerHTML=allProducts.map(p=>`<div class="pc"><img src="images/placeholder-product.svg" alt="${p.name}" loading="lazy"><div class="pc-bd"><h3>${p.name}</h3><span class="pb">${p.series}</span></div></div>`).join('');
  ob(pg);
 }
 

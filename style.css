@@ -98,7 +98,7 @@ ul{list-style:none}
 .nav-has-dd{position:relative}
 .nav-has-dd > a::after{content:' ▾';font-size:9px;opacity:.6}
 .dd{
-  position:absolute;top:100%;left:0;min-width:220px;
+  position:absolute;top:100%;right:0;min-width:280px;
   background:var(--white);border:1px solid var(--gray-200);
   border-radius:var(--radius);box-shadow:var(--shadow-lg);
   padding:6px;opacity:0;pointer-events:none;transform:translateY(6px);
@@ -108,23 +108,59 @@ ul{list-style:none}
 
 .dd > li{position:relative}
 .dd > li > a{
-  display:block;padding:8px 14px;border-radius:4px;
-  font-size:13px;color:var(--gray-600);transition:.15s;
+  display:block;padding:9px 14px;border-radius:4px;padding-right:28px;
+  font-size:13px;color:var(--gray-600);transition:.15s;white-space:nowrap;
 }
 .dd > li > a:hover{background:var(--cyan-light);color:var(--cyan)}
 
-/* Third tier (sub-products) */
+/* Second level: Series (under Category) */
 .dd > li.has-sub > a::after{
-  content:'▸';float:right;font-size:11px;opacity:.5;margin-top:1px;
+  content:'▸';position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  font-size:11px;opacity:.5;
 }
 .dd-sub{
-  position:absolute;top:-6px;left:100%;margin-left:4px;
-  min-width:300px;background:var(--white);border:1px solid var(--gray-200);
+  position:absolute;top:-6px;left:100%;margin-left:2px;
+  min-width:320px;background:var(--white);border:1px solid var(--gray-200);
   border-radius:var(--radius);box-shadow:var(--shadow-lg);
-  padding:6px;opacity:0;pointer-events:none;transform:translateX(6px);
-  transition:all .2s;z-index:998;
+  padding:6px;opacity:0;pointer-events:none;
+  transition:opacity .15s;z-index:998;
 }
-.has-sub:hover > .dd-sub{opacity:1;pointer-events:auto;transform:translateX(0)}
+.has-sub > .dd-sub.sub-show{opacity:1;pointer-events:auto}
+/* Smart flip: open to left when no space on right */
+.dd-sub.dd-left{left:auto;right:100%;margin-left:0;margin-right:2px}
+/* Hover bridge when flipped: add invisible extension */
+.dd-sub.dd-left::before{content:'';position:absolute;top:-4px;bottom:-4px;right:100%;width:6px}
+
+/* Third level: Products (under Series) */
+.dd-sub > li{position:relative}
+.dd-sub > li > a{
+  display:block;padding:7px 12px;border-radius:4px;padding-right:24px;
+  font-size:12.5px;color:var(--gray-600);transition:.15s;white-space:nowrap;
+}
+.dd-sub > li > a:hover{background:var(--cyan-light);color:var(--cyan)}
+
+.dd-sub > li.has-sub-sub > a::after{
+  content:'▸';position:absolute;right:10px;top:50%;transform:translateY(-50%);
+  font-size:10px;opacity:.5;
+}
+.dd-sub-sub{
+  position:absolute;top:-6px;left:100%;margin-left:2px;
+  min-width:340px;max-height:70vh;overflow-y:auto;
+  background:var(--white);border:1px solid var(--gray-200);
+  border-radius:var(--radius);box-shadow:var(--shadow-lg);
+  padding:6px;opacity:0;pointer-events:none;
+  transition:opacity .15s;z-index:997;
+}
+.has-sub-sub > .dd-sub-sub.sub-show{opacity:1;pointer-events:auto}
+/* Smart flip for 3rd level */
+.dd-sub-sub.dd-left{left:auto;right:100%;margin-left:0;margin-right:2px}
+.dd-sub-sub.dd-left::before{content:'';position:absolute;top:-4px;bottom:-4px;right:100%;width:6px}
+.dd-sub-sub li a{
+  display:block;padding:7px 12px;border-radius:4px;
+  font-size:12px;color:var(--gray-600);line-height:1.4;
+  transition:.15s;
+}
+.dd-sub-sub li a:hover{background:var(--cyan-light);color:var(--cyan)}
 .dd-sub li a{
   display:block;padding:7px 12px;border-radius:4px;
   font-size:12.5px;color:var(--gray-600);line-height:1.4;
@@ -440,8 +476,13 @@ ul{list-style:none}
   .nav-l > li > a{width:100%}
   .dd{position:static;opacity:1;pointer-events:auto;transform:none;box-shadow:none;display:none;border:none;padding-left:14px;min-width:auto}
   .nav-has-dd.active-mobile .dd{display:block}
-  .dd-sub{position:static;opacity:1;pointer-events:auto;transform:none;box-shadow:none;display:none;border:none;padding-left:14px;min-width:auto}
+  .dd-sub{position:static;opacity:1;pointer-events:auto;transform:none;box-shadow:none;display:none;border:none;padding-left:14px;min-width:auto;max-height:none;overflow-y:visible}
   .has-sub.active-mobile .dd-sub{display:block}
+  .dd > li.has-sub > a::after{content:'▸';position:static;float:right;transform:none}
+  .dd-sub > li > a::after{display:none!important}
+  .dd-sub-sub{position:static;opacity:1;pointer-events:auto;transform:none;box-shadow:none;display:none;border:none;padding-left:14px;min-width:auto;max-height:none;overflow-y:visible}
+  .has-sub-sub.active-mobile .dd-sub-sub{display:block}
+  .dd-sub > li.has-sub-sub > a::after{content:'▸';position:static;float:right;transform:none!important;display:inline-block!important}
   .sg{grid-template-columns:repeat(2,1fr)}
   .ig{grid-template-columns:1fr}
   .wg,.pg{grid-template-columns:1fr}
