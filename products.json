@@ -1,0 +1,239 @@
+{
+  "categories": [
+    {
+      "id": "solenoid-valves",
+      "name": "Solenoid Valves",
+      "icon": "⚙️",
+      "products": [
+        {
+          "id": "pv-diaphragm-nc",
+          "name": "Pilot Operated Diaphragm Type Solenoid Valve (NC)",
+          "description": "High-flow pilot operated diaphragm solenoid valve, normally closed. Ideal for air, water, and light oil applications with reliable sealing and low power consumption.",
+          "image": "placeholder-product.svg",
+          "featured": true
+        },
+        {
+          "id": "pv-diaphragm-no",
+          "name": "Pilot Operated Diaphragm Type Solenoid Valve (NO)",
+          "description": "Normally open pilot operated diaphragm solenoid valve designed for continuous duty applications. Suitable for industrial automation systems.",
+          "image": "placeholder-product.svg",
+          "featured": true
+        },
+        {
+          "id": "pv-piston-steam",
+          "name": "Pilot Operated Piston Type Steam Valve",
+          "description": "Heavy-duty piston operated solenoid valve for steam applications. Designed to handle high temperatures and pressures in industrial environments.",
+          "image": "placeholder-product.svg",
+          "featured": true
+        },
+        {
+          "id": "da-2-2-way",
+          "name": "Direct Acting 2/2 Way Solenoid Valve (NC/NO)",
+          "description": "Compact direct acting 2/2 way solenoid valve available in both NC and NO configurations. Suitable for low flow applications with fast response time.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "da-3-2-way",
+          "name": "Direct Acting 3/2 Way Solenoid Valve (NC/NO)",
+          "description": "Versatile direct acting 3/2 way solenoid valve for directional control applications. Available in universal, normally closed, and normally open configurations.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "dust-collector",
+          "name": "Dust Collector Valve (Pulse Jet Angle Type)",
+          "description": "High-performance pulse jet dust collector valve for filter cleaning applications in cement, steel, and chemical plants. Robust construction for demanding environments.",
+          "image": "placeholder-product.svg",
+          "featured": true
+        },
+        {
+          "id": "gas-solenoid",
+          "name": "Gas Solenoid Valve (UGS Series)",
+          "description": "Specialized gas solenoid valve certified for natural gas, LPG, and other gaseous media. Meets international safety standards with leak-proof design.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        }
+      ]
+    },
+    {
+      "id": "pneumatic-valves",
+      "name": "Pneumatic Valves & Actuators",
+      "icon": "🔧",
+      "products": [
+        {
+          "id": "pneumatic-actuator",
+          "name": "Pneumatic Rack & Pinion Actuator",
+          "description": "High-torque rack and pinion pneumatic actuator for quarter-turn valve automation. Double acting and spring return models available.",
+          "image": "placeholder-product.svg",
+          "featured": true
+        },
+        {
+          "id": "ball-valve",
+          "name": "Ball Valve (Fully Bore / Reduced Bore)",
+          "description": "Precision-engineered ball valves available in full bore and reduced bore designs. Suitable for on-off and control applications across industries.",
+          "image": "placeholder-product.svg",
+          "featured": true
+        },
+        {
+          "id": "butterfly-valve",
+          "name": "Butterfly Valve (Wafer / Lug Type)",
+          "description": "High-performance butterfly valves in wafer and lug type configurations. Ideal for isolation and flow control in large diameter pipelines.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "angle-seat-valve",
+          "name": "Angle Seat Valve (Piston Operated)",
+          "description": "Heavy-duty angle seat valve with piston operation for steam, condensate, and high-viscosity fluids. Reliable sealing and long service life.",
+          "image": "placeholder-product.svg",
+          "featured": true
+        },
+        {
+          "id": "air-cylinder",
+          "name": "Air Cylinder (ISO / Compact Series)",
+          "description": "High-quality pneumatic air cylinders in ISO and compact series. Double acting, single acting, and through-rod variants available.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "pneumatic-directional",
+          "name": "Pneumatic Directional Control Valve (DCC Series)",
+          "description": "Compact pneumatic directional control valves for precise air flow management. Available in 5/2, 5/3, and 3/2 configurations with solenoid or manual pilot.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        }
+      ]
+    },
+    {
+      "id": "special-purpose",
+      "name": "Special Purpose Valves",
+      "icon": "🏭",
+      "products": [
+        {
+          "id": "ptfe-diaphragm",
+          "name": "PTFE Diaphragm Solenoid Valve",
+          "description": "Chemically resistant PTFE diaphragm solenoid valve for handling corrosive fluids and aggressive chemicals. Ideal for chemical processing and pharmaceutical industries.",
+          "image": "placeholder-product.svg",
+          "featured": true
+        },
+        {
+          "id": "high-pressure",
+          "name": "High Pressure Solenoid Valve",
+          "description": "Rugged high-pressure solenoid valve rated for hydraulic and pneumatic systems up to 210 bar. Suitable for heavy industrial applications.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "explosion-proof",
+          "name": "Explosion Proof Solenoid Valve",
+          "description": "ATEX and PESO certified explosion-proof solenoid valves for hazardous area installations. Safe operation in flammable gas and dust environments.",
+          "image": "placeholder-product.svg",
+          "featured": true
+        }
+      ]
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Mr. Quentin Law",
+      "location": "South Africa",
+      "text": "Exceptional product quality and timely delivery. CLIVO's solenoid valves have significantly improved our automation system reliability. Highly recommended for industrial applications.",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "Mr. James Mitchell",
+      "location": "Australia",
+      "text": "We have been using CLIVO pneumatic actuators for over two years now. The performance has been outstanding with zero maintenance issues. A trusted partner for our operations.",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "name": "Mr. David Chen",
+      "location": "Singapore",
+      "text": "The technical support and after-sales service from CLIVO is remarkable. They helped us select the right valves for our chemical processing plant. Excellent engineering support.",
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "name": "Mr. Ahmed Hassan",
+      "location": "UAE",
+      "text": "CLIVO's explosion-proof solenoid valves met our stringent safety requirements for oil and gas applications. The ATEX certification gives us complete confidence in their products.",
+      "rating": 5
+    },
+    {
+      "id": 5,
+      "name": "Mr. Thomas Weber",
+      "location": "Germany",
+      "text": "Precision engineering at its finest. The PTFE diaphragm valves from CLIVO have performed flawlessly in our pharmaceutical manufacturing lines. German quality standards met with Indian efficiency.",
+      "rating": 5
+    }
+  ],
+  "stats": {
+    "products": 250,
+    "happyClients": 500,
+    "certificates": 12,
+    "awards": 8
+  },
+  "certifications": [
+    { "name": "ISO 9001:2015", "by": "TUV NORD", "image": "cert-iso.svg" },
+    { "name": "CE Certified", "by": "European Standards", "image": "cert-ce.svg" },
+    { "name": "ATEX Certified", "by": "Explosion Proof", "image": "cert-atex.svg" },
+    { "name": "PESO Approved", "by": "India", "image": "cert-peso.svg" },
+    { "name": "BIS Certified", "by": "Bureau of Indian Standards", "image": "cert-bis.svg" },
+    { "name": "CIMFR Approved", "by": "Mining Safety", "image": "cert-cimfr.svg" }
+  ],
+  "industries": [
+    {
+      "id": "oil-gas",
+      "name": "Oil & Gas",
+      "image": "industry-oil-gas.svg",
+      "description": "CLIVO provides rugged solenoid valves and actuators for upstream and downstream oil & gas operations. Our explosion-proof and high-pressure solutions meet API and ATEX standards for safe and reliable flow control in the most demanding environments."
+    },
+    {
+      "id": "power-generation",
+      "name": "Power Generation",
+      "image": "industry-power.svg",
+      "description": "From thermal to renewable power plants, CLIVO's steam valves and pneumatic actuators deliver precise control for turbine cooling, fuel handling, and emission control systems with exceptional durability and zero-leakage performance."
+    },
+    {
+      "id": "food-beverage",
+      "name": "Food & Beverages",
+      "image": "industry-food.svg",
+      "description": "CLIVO's sanitary diaphragm valves and stainless steel solenoid valves meet FDA and EHEDG standards for food and beverage processing. Our hygienic designs ensure contamination-free operation in dairy, brewery, and beverage production lines."
+    },
+    {
+      "id": "chemical-pharma",
+      "name": "Chemical & Pharmaceuticals",
+      "image": "industry-chemical.svg",
+      "description": "Our PTFE-lined and corrosion-resistant solenoid valves are engineered for aggressive chemical media and pharmaceutical-grade applications. CLIVO valves provide precise dosing, isolation, and control in critical processing environments."
+    },
+    {
+      "id": "marine",
+      "name": "Marine & Offshore",
+      "image": "industry-marine.svg",
+      "description": "CLIVO supplies marine-grade solenoid valves and pneumatic systems designed to withstand saltwater corrosion and harsh offshore conditions. DNV and Lloyds approved solutions for ballast control and engine room automation."
+    },
+    {
+      "id": "irrigation",
+      "name": "Irrigation",
+      "image": "industry-irrigation.svg",
+      "description": "High-flow, low-power solenoid valves for agricultural and landscape irrigation systems. CLIVO's irrigation valves offer reliable performance with minimal maintenance, ensuring efficient water management for large-scale farming operations."
+    }
+  ],
+  "company": {
+    "email": "sales@clivo.in",
+    "phone1": "+91 85110 98822",
+    "phone2": "+91 76000 04865",
+    "afterSales": "+91 75758 68662",
+    "address": "Ankur Industrial Complex, Shapar (Veraval) 360024, Dist: Rajkot, Gujarat, India",
+    "exportCountries": [
+      "United States", "United Kingdom", "Germany", "France", "Australia", "South Africa",
+      "UAE", "Saudi Arabia", "Indonesia", "Nepal", "Singapore", "Malaysia",
+      "Egypt", "Kenya", "Nigeria", "Brazil", "Chile", "Thailand", "Vietnam",
+      "South Korea", "Japan", "New Zealand", "Italy", "Spain", "Netherlands"
+    ]
+  }
+}

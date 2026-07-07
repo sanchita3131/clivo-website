@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+  <rect width="800" height="400" fill="#1a3f7a"/>
+  <g transform="translate(400,200)">
+    <path d="M-100-80 L0-120 L100-80" stroke="#d4a843" stroke-width="2" fill="none" opacity="0.3"/>
+    <rect x="-80" y="-80" width="160" height="120" rx="4" fill="none" stroke="#d4a843" stroke-width="2" opacity="0.3"/>
+    <line x1="-60" y1="-40" x2="60" y2="-40" stroke="#d4a843" stroke-width="1" opacity="0.2"/>
+    <line x1="-60" y1="0" x2="60" y2="0" stroke="#d4a843" stroke-width="1" opacity="0.2"/>
+    <line x1="-60" y1="40" x2="60" y2="40" stroke="#d4a843" stroke-width="1" opacity="0.2"/>
+    <path d="M-30-30 L-30 70" stroke="#d4a843" stroke-width="1" opacity="0.15"/>
+    <path d="M30-30 L30 70" stroke="#d4a843" stroke-width="1" opacity="0.15"/>
+    <circle cx="0" cy="0" r="20" fill="#d4a843" opacity="0.15"/>
+    <text x="0" y="5" text-anchor="middle" fill="#d4a843" font-size="18" font-family="system-ui" opacity="0.5">⚡</text>
+  </g>
+</svg>

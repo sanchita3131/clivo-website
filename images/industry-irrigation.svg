@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+  <rect width="800" height="400" fill="#1a3f7a"/>
+  <g transform="translate(400,200)">
+    <path d="M-100-60 Q-120-20 -80-20 Q-40-20 0-60 Q40-20 80-20 Q120-20 100-60" fill="none" stroke="#d4a843" stroke-width="2" opacity="0.3"/>
+    <path d="M-100-20 Q-120-10 -80-10 Q-40-10 0-20 Q40-10 80-10 Q120-10 100-20" stroke="#d4a843" stroke-width="1" opacity="0.15"/>
+    <line x1="-80" y1="20" x2="-80" y2="80" stroke="#d4a843" stroke-width="2" opacity="0.3"/>
+    <line x1="0" y1="20" x2="0" y2="80" stroke="#d4a843" stroke-width="2" opacity="0.3"/>
+    <line x1="80" y1="20" x2="80" y2="80" stroke="#d4a843" stroke-width="2" opacity="0.3"/>
+    <path d="M-10-80 Q0-90 10-80" stroke="#d4a843" stroke-width="1.5" fill="none" opacity="0.3"/>
+    <path d="M-10-70 Q0-80 10-70" stroke="#d4a843" stroke-width="1" fill="none" opacity="0.2"/>
+    <circle cx="-80" cy="50" r="5" fill="#d4a843" opacity="0.25"/>
+    <circle cx="0" cy="50" r="5" fill="#d4a843" opacity="0.25"/>
+    <circle cx="80" cy="50" r="5" fill="#d4a843" opacity="0.25"/>
+  </g>
+</svg>

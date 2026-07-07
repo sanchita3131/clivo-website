@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | CLIVO Automation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container tb-inner">
+      <div class="tb-l">
+        <a href="tel:+918511098822"><span>📞</span> +91 85110 98822</a>
+        <span class="sp">|</span>
+        <a href="mailto:sales@clivo.in"><span>✉️</span> sales@clivo.in</a>
+        <span class="sp">|</span>
+        <a href="tel:+917575868662"><span>🛠️</span> After Sales: +91 75758 68662</a>
+      </div>
+      <div class="tb-r">
+        <a href="#" aria-label="Facebook">fb</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Instagram">ig</a>
+        <a href="#" aria-label="YouTube">yt</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container h-inner">
+      <a href="index.html" class="logo"><img src="images/clivo-logo.svg" alt="CLIVO Automation"></a>
+      <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+      <nav class="nav" id="nav">
+        <ul class="nav-l" id="navList">
+          <li><a href="index.html">Home</a></li>
+          <li class="nav-has-dd" id="productsNav">
+            <a href="products.html">Products</a>
+            <ul class="dd" id="prodDD"></ul>
+          </li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <button class="theme-btn" id="themeBtn" aria-label="Theme">
+          <span class="li">☀️</span>
+          <span class="di">🌙</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BANNER -->
+  <section class="banner">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Have a question or need a custom solution? We'd love to hear from you.</p>
+      <div class="bread"><a href="index.html">Home</a> / Contact</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section s-alt">
+    <div class="container">
+      <div class="cw">
+        <form class="cf" id="cf">
+          <div class="fr">
+            <div class="fg">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" required placeholder="John Doe">
+            </div>
+            <div class="fg">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="john@company.com">
+            </div>
+          </div>
+          <div class="fr">
+            <div class="fg">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+            </div>
+            <div class="fg">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Product Inquiry">
+            </div>
+          </div>
+          <div class="fg">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your requirements..."></textarea>
+          </div>
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_subject" value="New enquiry from CLIVO Website">
+          <button type="submit" class="btn btn-cy btn-blk">Send Message</button>
+          <p class="fn">We typically respond within 24 business hours.</p>
+        </form>
+        <div class="ci">
+          <div class="ci-c">
+            <h4>📍 Address</h4>
+            <p><strong>CLIVO Automation</strong><br>Ankur Industrial Complex,<br>Shapar (Veraval) 360024<br>Dist: Rajkot, Gujarat, India</p>
+          </div>
+          <div class="ci-c">
+            <h4>📧 Email</h4>
+            <p><a href="mailto:sales@clivo.in">sales@clivo.in</a></p>
+          </div>
+          <div class="ci-c">
+            <h4>📞 Phone</h4>
+            <p><a href="tel:+918511098822">+91 85110 98822</a><br><a href="tel:+917600004865">+91 76000 04865</a></p>
+          </div>
+          <div class="ci-c">
+            <h4>🌐 Global Reach</h4>
+            <p>Exporting to 25+ countries worldwide including USA, Europe, Middle East, Africa & Asia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <div class="mw">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3692.3!2d70.8!3d22.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDE4JzAwLjAiTiA3MMKwNDgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1" height="260" style="border:0;width:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="CLIVO Automation Location"></iframe>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="fg2">
+        <div class="fc"><h4>Our Products</h4><ul class="fl" id="fp"></ul></div>
+        <div class="fc">
+          <h4>Quick Links</h4>
+          <ul class="fl">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="index.html#industries">Industries</a></li>
+            <li><a href="index.html#why">Why CLIVO</a></li>
+            <li><a href="index.html#certs">Certifications</a></li>
+            <li><a href="contact.html">Reach Us</a></li>
+          </ul>
+        </div>
+        <div class="fc">
+          <h4>Contact Us</h4>
+          <p><strong>CLIVO Automation</strong></p>
+          <p>Ankur Industrial Complex,<br>Shapar (Veraval) 360024<br>Dist: Rajkot, Gujarat, India</p>
+          <p class="fci">📞 <a href="tel:+918511098822">+91 85110 98822</a></p>
+          <p class="fci">📧 <a href="mailto:sales@clivo.in">sales@clivo.in</a></p>
+          <div class="fsoc">
+            <a href="#" aria-label="Facebook">fb</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="YouTube">yt</a>
+          </div>
+        </div>
+        <div class="fc">
+          <h4>Newsletter</h4>
+          <p>Stay updated with our latest products.</p>
+          <form class="nf" id="nf">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit" class="btn btn-gold btn-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="fb"><div class="container"><p>&copy; 2026 CLIVO Automation. All Rights Reserved.</p></div></div>
+  </footer>
+
+  <button class="stp" id="stp">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>
