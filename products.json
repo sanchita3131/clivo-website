@@ -2,55 +2,146 @@
   "categories": [
     {
       "id": "solenoid-valves",
-      "name": "Solenoid Valves",
+      "name": "Solenoid Valve",
       "icon": "⚙️",
       "products": [
         {
-          "id": "pv-diaphragm-nc",
-          "name": "Pilot Operated Diaphragm Type Solenoid Valve (NC)",
-          "description": "High-flow pilot operated diaphragm solenoid valve, normally closed. Ideal for air, water, and light oil applications with reliable sealing and low power consumption.",
+          "id": "pcn-pilot-operated-diaphragm",
+          "name": "Pilot Operated Diaphragm Valve (NC / NO) - PCN Series",
+          "description": "High-flow pilot operated diaphragm solenoid valve available in normally closed and normally open configurations. Ideal for air, water, and light oil applications with reliable sealing and low power consumption.",
           "image": "placeholder-product.svg",
           "featured": true
         },
         {
-          "id": "pv-diaphragm-no",
-          "name": "Pilot Operated Diaphragm Type Solenoid Valve (NO)",
-          "description": "Normally open pilot operated diaphragm solenoid valve designed for continuous duty applications. Suitable for industrial automation systems.",
+          "id": "pcn-pilot-operated-flange",
+          "name": "Pilot Operated Diaphragm Valve (Flange) - PCN Series",
+          "description": "Flanged pilot operated diaphragm solenoid valve designed for industrial piping systems requiring secure bolted connections. Suitable for higher pressure applications.",
           "image": "placeholder-product.svg",
           "featured": true
         },
         {
-          "id": "pv-piston-steam",
-          "name": "Pilot Operated Piston Type Steam Valve",
-          "description": "Heavy-duty piston operated solenoid valve for steam applications. Designed to handle high temperatures and pressures in industrial environments.",
-          "image": "placeholder-product.svg",
-          "featured": true
-        },
-        {
-          "id": "da-2-2-way",
-          "name": "Direct Acting 2/2 Way Solenoid Valve (NC/NO)",
-          "description": "Compact direct acting 2/2 way solenoid valve available in both NC and NO configurations. Suitable for low flow applications with fast response time.",
+          "id": "mcn-semi-lift-diaphragm",
+          "name": "Semi Lift Diaphragm Operated Solenoid Valve (NC / NO) - MCN Series",
+          "description": "Semi-lift diaphragm operated solenoid valve combining direct-acting and pilot-operated principles for versatile flow control in demanding applications.",
           "image": "placeholder-product.svg",
           "featured": false
         },
         {
-          "id": "da-3-2-way",
-          "name": "Direct Acting 3/2 Way Solenoid Valve (NC/NO)",
-          "description": "Versatile direct acting 3/2 way solenoid valve for directional control applications. Available in universal, normally closed, and normally open configurations.",
-          "image": "placeholder-product.svg",
-          "featured": false
-        },
-        {
-          "id": "dust-collector",
-          "name": "Dust Collector Valve (Pulse Jet Angle Type)",
-          "description": "High-performance pulse jet dust collector valve for filter cleaning applications in cement, steel, and chemical plants. Robust construction for demanding environments.",
+          "id": "hcp-piston-steam",
+          "name": "Pilot Operated Piston Type Steam Valve (NC / NO) - HCP Series",
+          "description": "Heavy-duty piston operated solenoid valve designed specifically for steam applications. Handles high temperatures and pressures in industrial environments with robust construction.",
           "image": "placeholder-product.svg",
           "featured": true
         },
         {
-          "id": "gas-solenoid",
-          "name": "Gas Solenoid Valve (UGS Series)",
-          "description": "Specialized gas solenoid valve certified for natural gas, LPG, and other gaseous media. Meets international safety standards with leak-proof design.",
+          "id": "ugs-gas-solenoid",
+          "name": "Gas Solenoid Valve - UGS Series",
+          "description": "Specialized gas solenoid valve certified for natural gas, LPG, and other gaseous media. Meets international safety standards with leak-proof design and reliable operation.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "pbn-pilot-operated",
+          "name": "Pilot Operated Diaphragm Type Solenoid Valve (NC) - PBN Series",
+          "description": "Normally closed pilot operated diaphragm solenoid valve for general purpose industrial applications. Compact design with reliable sealing and quick response.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "das-2-2-way",
+          "name": "2/2 Way Direct Acting Valve (NC / NO) - DAS Series",
+          "description": "Compact direct acting 2/2 way solenoid valve available in NC and NO configurations. Suitable for low flow applications with fast response time and zero differential pressure operation.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "das-3-2-way",
+          "name": "3/2 Way Direct Acting Valve (NC / NO) - DAS Series",
+          "description": "Versatile direct acting 3/2 way solenoid valve for directional control. Available in universal, normally closed, and normally open configurations.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "dac-3-2-way",
+          "name": "3/2 Way Direct Acting Valve (NC / NO) - DAC Series",
+          "description": "Direct acting 3/2 way solenoid valve with compact footprint for space-constrained applications. Suitable for air and inert gas applications.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "dar-gantry",
+          "name": "2/2 Solenoid Valve For Terminal / Gantry Automation (NC / NO) - DAR Series",
+          "description": "Specialized solenoid valve designed for terminal and gantry automation systems. Reliable performance in fuel dispensing and transfer applications.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "mnn-plastic",
+          "name": "Semi Lift Diaphragm Operated Plastic Solenoid Valve (NC) - MNN Series",
+          "description": "Corrosion-resistant plastic solenoid valve with semi-lift diaphragm operation. Ideal for chemical handling and aggressive media applications.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "pbu-high-pressure",
+          "name": "High Pressure Pilot Operated Diaphragm Type Solenoid Valve (NC / NO) - PBU Series",
+          "description": "High pressure pilot operated diaphragm solenoid valve rated for demanding hydraulic and pneumatic systems. Robust construction for heavy industrial use.",
+          "image": "placeholder-product.svg",
+          "featured": true
+        },
+        {
+          "id": "auto-drain-filter",
+          "name": "Auto Drain Valve With Filter Ball Valve (NC)",
+          "description": "Automatic drain valve with integrated filter ball valve for removing condensate from compressed air systems. Maintains system efficiency without manual intervention.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "auto-drain-direct",
+          "name": "2/2 Way Direct Acting Auto Drain Solenoid Valve (NC)",
+          "description": "Direct acting auto drain solenoid valve for automatic condensate removal in compressed air systems. Timer-controlled or level-sensing operation.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "auto-drain-high-flow",
+          "name": "2/2 Way Pilot Operated High Flow Auto Drain Solenoid Valve (NC)",
+          "description": "High flow pilot operated auto drain valve for large capacity compressed air systems. Handles high volumes of condensate with reliable automatic operation.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "daa-angle-type",
+          "name": "2/2 Way Direct Acting Angle Type Valve (NC) - DAA Series",
+          "description": "Angle type direct acting solenoid valve with compact right-angle design for space-constrained installations. Suitable for air, water, and light oil.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "dav-3-way",
+          "name": "3 Way Direct Acting Solenoid Valve (All Port In Body) - DAV Series",
+          "description": "Three-way direct acting solenoid valve with all ports in the body for universal manifold mounting. Suitable for diverse flow control configurations.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "dhp-high-pressure",
+          "name": "2/2 Direct Acting High Pressure Solenoid Valve (NC) - DHP Series",
+          "description": "Direct acting high pressure solenoid valve for hydraulic and pneumatic systems up to 210 bar. Rugged construction for demanding high-pressure applications.",
+          "image": "placeholder-product.svg",
+          "featured": true
+        },
+        {
+          "id": "media-separated",
+          "name": "2 Way Direct Acting Media Separated Solenoid Valve (NC)",
+          "description": "Media separated solenoid valve with isolation diaphragm for handling aggressive or corrosive fluids. Protects coil and internal components from media contact.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "pinch-type",
+          "name": "Pinch Type Solenoid Valve (NC / NO)",
+          "description": "Pinch type solenoid valve that uses a pinching mechanism to control flow through flexible tubing. Ideal for sterile applications and media containing particulates.",
           "image": "placeholder-product.svg",
           "featured": false
         }
@@ -58,117 +149,433 @@
     },
     {
       "id": "pneumatic-valves",
-      "name": "Pneumatic Valves & Actuators",
+      "name": "Pneumatic Valves",
       "icon": "🔧",
       "products": [
         {
-          "id": "pneumatic-actuator",
-          "name": "Pneumatic Rack & Pinion Actuator",
-          "description": "High-torque rack and pinion pneumatic actuator for quarter-turn valve automation. Double acting and spring return models available.",
-          "image": "placeholder-product.svg",
-          "featured": true
-        },
-        {
-          "id": "ball-valve",
-          "name": "Ball Valve (Fully Bore / Reduced Bore)",
-          "description": "Precision-engineered ball valves available in full bore and reduced bore designs. Suitable for on-off and control applications across industries.",
-          "image": "placeholder-product.svg",
-          "featured": true
-        },
-        {
-          "id": "butterfly-valve",
-          "name": "Butterfly Valve (Wafer / Lug Type)",
-          "description": "High-performance butterfly valves in wafer and lug type configurations. Ideal for isolation and flow control in large diameter pipelines.",
+          "id": "dcc-3-2-single",
+          "name": "3/2 Single Solenoid Valve With Spring Return (NC/NO) - DCC Series",
+          "description": "Compact 3/2 way single solenoid pneumatic valve with spring return. Reliable directional control for industrial automation applications.",
           "image": "placeholder-product.svg",
           "featured": false
         },
         {
-          "id": "angle-seat-valve",
-          "name": "Angle Seat Valve (Piston Operated)",
-          "description": "Heavy-duty angle seat valve with piston operation for steam, condensate, and high-viscosity fluids. Reliable sealing and long service life.",
+          "id": "dcc-5-2-single",
+          "name": "5/2 Single Solenoid Valve With Spring Return - DCC Series",
+          "description": "5/2 way single solenoid pneumatic directional control valve with spring return. Suitable for double-acting cylinder actuation.",
           "image": "placeholder-product.svg",
           "featured": true
         },
         {
-          "id": "air-cylinder",
-          "name": "Air Cylinder (ISO / Compact Series)",
-          "description": "High-quality pneumatic air cylinders in ISO and compact series. Double acting, single acting, and through-rod variants available.",
+          "id": "dcc-5-3-center",
+          "name": "5/3 Double Solenoid Valve With Spring Center - DCC Series",
+          "description": "5/3 way double solenoid pneumatic valve with spring-centered position. Provides precise control with all-ports-blocked centre position.",
           "image": "placeholder-product.svg",
           "featured": false
         },
         {
-          "id": "pneumatic-directional",
-          "name": "Pneumatic Directional Control Valve (DCC Series)",
-          "description": "Compact pneumatic directional control valves for precise air flow management. Available in 5/2, 5/3, and 3/2 configurations with solenoid or manual pilot.",
+          "id": "dcc-namur-single",
+          "name": "3/2, 5/2 Single Solenoid Namur Valve With Spring Return - DCC Series",
+          "description": "Namur mount single solenoid pneumatic valve with spring return for direct mounting on quarter-turn actuators. Standardized interface for easy installation.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "dcc-hand-lever",
+          "name": "3/2 Hand Lever Valve Manual and Spring Return - DCC Series",
+          "description": "Manual hand lever operated pneumatic valve with spring return for applications requiring manual control of pneumatic circuits.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "dcc-external-pilot",
+          "name": "3/2 Single External Pilot Operated Valve With Spring Return (NC/NO) - DCC Series",
+          "description": "External pilot operated pneumatic valve suitable for low-pressure or vacuum applications where internal pilot pressure is insufficient.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "dcs-5-2-single",
+          "name": "5/2 Single Solenoid Valve With Spring Return - DCS Series",
+          "description": "DCS series 5/2 way single solenoid pneumatic valve with spring return. Higher flow capacity for demanding pneumatic applications.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "dcs-5-3-center",
+          "name": "5/3 Double Solenoid Valve With Spring Center - DCS Series",
+          "description": "DCS series 5/3 way double solenoid pneumatic valve with spring-centered position. Robust construction for industrial environments.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "sh-or-valve",
+          "name": "OR Valve - SH Series",
+          "description": "Pneumatic OR (shuttle) valve for selecting the higher of two input pressures. Used in safety circuits and alternative supply applications.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "sh-and-valve",
+          "name": "AND Valve - SH Series",
+          "description": "Pneumatic AND (dual pressure) valve requiring both input signals for output. Used in interlock and safety control circuits.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "manifold-dcv",
+          "name": "Directional Control Valve Manifold",
+          "description": "Modular manifold for directional control valves providing centralized air supply and exhaust. Reduces piping and simplifies pneumatic system installation.",
           "image": "placeholder-product.svg",
           "featured": false
         }
       ]
     },
     {
-      "id": "special-purpose",
-      "name": "Special Purpose Valves",
-      "icon": "🏭",
+      "id": "angle-seat-valves",
+      "name": "Angle Seat Valve",
+      "icon": "🚰",
       "products": [
         {
-          "id": "ptfe-diaphragm",
-          "name": "PTFE Diaphragm Solenoid Valve",
-          "description": "Chemically resistant PTFE diaphragm solenoid valve for handling corrosive fluids and aggressive chemicals. Ideal for chemical processing and pharmaceutical industries.",
+          "id": "ycp-steel-actuator",
+          "name": "Angle Seat Valve with Steel Actuator Operator (NC / NO) - YCP Series",
+          "description": "Heavy-duty angle seat valve with steel actuator for steam, condensate, and high-viscosity fluids. Reliable sealing and long service life in demanding environments.",
           "image": "placeholder-product.svg",
           "featured": true
         },
         {
-          "id": "high-pressure",
-          "name": "High Pressure Solenoid Valve",
-          "description": "Rugged high-pressure solenoid valve rated for hydraulic and pneumatic systems up to 210 bar. Suitable for heavy industrial applications.",
+          "id": "acp-plastic-actuator",
+          "name": "Angle Seat Valve with Plastic Actuator Operator (NC/NO/DA) - ACP Series",
+          "description": "Cost-effective angle seat valve with plastic actuator for less demanding applications. Suitable for water, air, and light chemical media.",
           "image": "placeholder-product.svg",
           "featured": false
         },
         {
-          "id": "explosion-proof",
-          "name": "Explosion Proof Solenoid Valve",
-          "description": "ATEX and PESO certified explosion-proof solenoid valves for hazardous area installations. Safe operation in flammable gas and dust environments.",
+          "id": "tcp-3-way",
+          "name": "3 Way Control Valve (NC / NO) - TCP Series",
+          "description": "Three-way angle seat control valve for diverting or mixing flow streams. Suitable for temperature control and blending applications.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        }
+      ]
+    },
+    {
+      "id": "pneumatic-actuators",
+      "name": "Pneumatic Actuator",
+      "icon": "🔄",
+      "products": [
+        {
+          "id": "ad-double-acting",
+          "name": "Double Acting Pneumatic Actuator - AD Series",
+          "description": "Double acting rack and pinion pneumatic actuator for quarter-turn valve automation. High torque output with compact design for ball valve and butterfly valve operation.",
           "image": "placeholder-product.svg",
           "featured": true
+        },
+        {
+          "id": "as-single-acting",
+          "name": "Single Acting Pneumatic Actuator - AS Series",
+          "description": "Spring return rack and pinion pneumatic actuator for fail-safe quarter-turn valve operation. Available in fail-open and fail-closed configurations.",
+          "image": "placeholder-product.svg",
+          "featured": true
+        }
+      ]
+    },
+    {
+      "id": "ball-valves",
+      "name": "Ball Valve",
+      "icon": "⚪",
+      "products": [
+        {
+          "id": "jc-3-piece-flange",
+          "name": "3 Piece Flange Ball Valve - JC Series",
+          "description": "Three-piece flanged ball valve for easy maintenance and repair without removing from pipeline. Suitable for on-off and control applications in industrial piping systems.",
+          "image": "placeholder-product.svg",
+          "featured": true
+        },
+        {
+          "id": "jc-screwed-socket",
+          "name": "Screwed / Socket Weld Ball Valve - JC Series",
+          "description": "Compact screwed and socket weld ball valve for smaller diameter piping. Available in full bore and reduced bore configurations.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        }
+      ]
+    },
+    {
+      "id": "butterfly-valves",
+      "name": "Butterfly Valve",
+      "icon": "🌀",
+      "products": [
+        {
+          "id": "bl-lug-type-gear",
+          "name": "Gear Box Operated Lug Type Butterfly Valve - BL Series",
+          "description": "Lug type butterfly valve with gearbox operator for precise throttling control. Suitable for dead-end service and isolation applications.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "bl-lug-pneumatic",
+          "name": "Pneumatic Operated Lug Type Butterfly Valve - PN10/16 - BL Series",
+          "description": "Lug type butterfly valve with pneumatic actuator for automated on-off and modulating control in industrial processes.",
+          "image": "placeholder-product.svg",
+          "featured": true
+        },
+        {
+          "id": "bw-wafer-hand-lever",
+          "name": "Hand Lever Operated Wafer Type Butterfly Valve - BW Series",
+          "description": "Economical wafer type butterfly valve with hand lever for general isolation and throttling services. Lightweight and easy to install between flanges.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "bw-wafer-pneumatic",
+          "name": "Pneumatic Operated Wafer Type Butterfly Valve - PN10/16 - BW Series",
+          "description": "Wafer type butterfly valve with pneumatic actuator for automated flow control. Compact design with high flow capacity.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "bm-wafer-pneumatic",
+          "name": "Pneumatic Operated Wafer Type Butterfly Valve - PN10/16 - BM Series",
+          "description": "BM series wafer butterfly valve with pneumatic actuator for demanding industrial applications. Enhanced sealing for bubble-tight shut-off.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        }
+      ]
+    },
+    {
+      "id": "pulse-jet-valves",
+      "name": "Pulse Jet Valve",
+      "icon": "💨",
+      "products": [
+        {
+          "id": "jan-angle-type",
+          "name": "Pulse Jet Angle Type Dust Collector Valve - JAN Series",
+          "description": "Angle type pulse jet valve for dust collector filter cleaning systems. High flow and rapid response for efficient filter regeneration in cement, steel, and chemical plants.",
+          "image": "placeholder-product.svg",
+          "featured": true
+        },
+        {
+          "id": "eps-external-pilot",
+          "name": "External Pilot Operated Pulse Jet Angle Type Dust Collector Valve - EPS Series",
+          "description": "External pilot operated pulse jet valve for high-pressure dust collector systems. Reliable performance in demanding baghouse filter cleaning applications.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        }
+      ]
+    },
+    {
+      "id": "air-cylinders",
+      "name": "Air Cylinder",
+      "icon": "📐",
+      "products": [
+        {
+          "id": "cs4-tie-rod",
+          "name": "Pneumatic Tie Rod Cylinder (ISO 15552) - CS4 Series",
+          "description": "ISO 15552 standard pneumatic tie rod cylinder for industrial automation. Double acting with magnetic piston for position sensing. Available in multiple bore sizes.",
+          "image": "placeholder-product.svg",
+          "featured": true
+        },
+        {
+          "id": "cs7-profile",
+          "name": "Pneumatic Profile Cylinder Square Type (ISO 15552) - CS7 Series",
+          "description": "Square profile pneumatic cylinder conforming to ISO 15552 standard. Space-efficient design with integrated sensors and adjustable cushioning.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "mxc-miniature",
+          "name": "Miniature Air Cylinder (ISO 6432) - MXC Series",
+          "description": "Miniature pneumatic cylinder conforming to ISO 6432 standard for compact applications. Available with magnetic and non-magnetic piston options.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "cp-compact",
+          "name": "Compact Air Cylinder - CP Series",
+          "description": "Short-stroke compact air cylinder for space-constrained applications. Ideal for clamping, positioning, and pushing operations in automation.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "cpx-iso-compact",
+          "name": "Compact Air Cylinder (ISO 21287) - CPX Series",
+          "description": "ISO 21287 standard compact profile cylinder combining short stroke with high force output. Suitable for modern automated assembly and handling systems.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "mcc-cushion",
+          "name": "Miniature Cushion Air Cylinder (ISO 6432) - MCC Series",
+          "description": "Miniature pneumatic cylinder with adjustable cushioning for smooth end-of-stroke deceleration. ISO 6432 standard with multiple mounting options.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        }
+      ]
+    },
+    {
+      "id": "air-preparation",
+      "name": "Air Preparation Unit",
+      "icon": "🔧",
+      "products": [
+        {
+          "id": "pd-air-filter",
+          "name": "Air Filter - PD Series",
+          "description": "High-efficiency compressed air filter for removing water, oil, and particulate contamination. Protects pneumatic components and extends system life.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "pd-regulator",
+          "name": "Air Regulator - PD Series",
+          "description": "Precision air pressure regulator for maintaining consistent downstream pressure. Reliable performance with high flow capacity and pressure ranges.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "pd-lubricator",
+          "name": "Air Lubricator - PD Series",
+          "description": "Automatic air line lubricator for injecting controlled amounts of oil into compressed air systems. Reduces wear on pneumatic components.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "pd-frl",
+          "name": "FRL Unit - PD Series",
+          "description": "Combined filter, regulator, and lubricator unit for complete compressed air preparation. Modular design with easy maintenance and service.",
+          "image": "placeholder-product.svg",
+          "featured": true
+        },
+        {
+          "id": "pr-precision-regulator",
+          "name": "Precision Regulator - PR Series",
+          "description": "High-precision pressure regulator for applications requiring accurate pressure control. Suitable for instrumentation and critical process applications.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        }
+      ]
+    },
+    {
+      "id": "irrigation",
+      "name": "Irrigation",
+      "icon": "💧",
+      "products": [
+        {
+          "id": "enn-external-pilot",
+          "name": "External Pilot Operated Diaphragm Valve (NC/NO) - ENN Series",
+          "description": "External pilot operated diaphragm valve for agricultural and landscape irrigation systems. Reliable flow control with low pressure loss for large-scale irrigation.",
+          "image": "placeholder-product.svg",
+          "featured": true
+        },
+        {
+          "id": "dap-direct-acting",
+          "name": "2 Way - 3 Way Direct Acting Pilot Solenoid Valve (NC/NO) - DAP Series",
+          "description": "Direct acting pilot solenoid valve for irrigation control systems. Compact design for precise water management in drip and sprinkler irrigation.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "pnn-plastic-flow",
+          "name": "Pilot Operated Diaphragm Type Plastic Solenoid Valve with Flow Controller (NC) - PNN Series",
+          "description": "Plastic diaphragm solenoid valve with integrated flow controller for irrigation. Corrosion-resistant design with adjustable flow rate for precise water management.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        }
+      ]
+    },
+    {
+      "id": "fittings-tubing",
+      "name": "One Touch Fittings & Tubing",
+      "icon": "🔗",
+      "products": [
+        {
+          "id": "vo-straight",
+          "name": "Straight Union - VO Series",
+          "description": "One touch push-in straight fitting for quick and secure tube connections in pneumatic systems. Available in multiple tube diameters.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "vo-elbow",
+          "name": "Union Elbow - VO Series",
+          "description": "One touch push-in elbow fitting for space-saving 90-degree tube routing. Reliable connection with easy push-to-connect installation.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "vo-tee",
+          "name": "Union Tee - VO Series",
+          "description": "One touch push-in tee fitting for branching tube lines. Equal flow distribution with secure push-in connections on all ports.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "vo-male-connector",
+          "name": "Male Connector - VO Series",
+          "description": "One touch fitting with male thread for connecting pneumatic tubing to ports and equipment. BSPT and NPT thread options available.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "pu-tubing",
+          "name": "Polyurethane Tubes - PU Series",
+          "description": "Flexible polyurethane tubing for pneumatic systems. Excellent abrasion resistance and flexibility across wide temperature ranges.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "pu-spiral",
+          "name": "Polyurethane Spiral Tube - PUS Series",
+          "description": "Retractable polyurethane spiral tubing for moving applications. Self-coiling design prevents tangling and provides neat installation.",
+          "image": "placeholder-product.svg",
+          "featured": false
+        },
+        {
+          "id": "nylon-tube",
+          "name": "Nylon Tube - N1/N6 Series",
+          "description": "Rigid nylon tubing for high-pressure pneumatic applications. Excellent burst strength and chemical resistance for demanding environments.",
+          "image": "placeholder-product.svg",
+          "featured": false
         }
       ]
     }
   ],
-  "testimonials": [
+  "industries": [
     {
-      "id": 1,
-      "name": "Mr. Quentin Law",
-      "location": "South Africa",
-      "text": "Exceptional product quality and timely delivery. CLIVO's solenoid valves have significantly improved our automation system reliability. Highly recommended for industrial applications.",
-      "rating": 5
+      "id": "oil-gas",
+      "name": "Oil & Gas",
+      "image": "industry-oil-gas.svg",
+      "description": "CLIVO provides rugged solenoid valves and actuators for upstream and downstream oil & gas operations. Butterfly valves for low-pressure loss and ball valves for high-pressure liquid and gas flow control."
     },
     {
-      "id": 2,
-      "name": "Mr. James Mitchell",
-      "location": "Australia",
-      "text": "We have been using CLIVO pneumatic actuators for over two years now. The performance has been outstanding with zero maintenance issues. A trusted partner for our operations.",
-      "rating": 5
+      "id": "power-generation",
+      "name": "Power Generation Station",
+      "image": "industry-power.svg",
+      "description": "Our control valves are applied in containment sampling systems, emergency core cooling systems, liquid radiation waste systems, and emergency generator systems in power plants."
     },
     {
-      "id": 3,
-      "name": "Mr. David Chen",
-      "location": "Singapore",
-      "text": "The technical support and after-sales service from CLIVO is remarkable. They helped us select the right valves for our chemical processing plant. Excellent engineering support.",
-      "rating": 5
+      "id": "food-beverage",
+      "name": "Food & Beverages",
+      "image": "industry-food.svg",
+      "description": "Solenoid valves from CLIVO regulate various food processing equipment with precision and hygiene. Our valves ensure reliable flow control in food and beverage production lines."
     },
     {
-      "id": 4,
-      "name": "Mr. Ahmed Hassan",
-      "location": "UAE",
-      "text": "CLIVO's explosion-proof solenoid valves met our stringent safety requirements for oil and gas applications. The ATEX certification gives us complete confidence in their products.",
-      "rating": 5
+      "id": "chemical-pharma",
+      "name": "Chemical & Pharmaceuticals",
+      "image": "industry-chemical.svg",
+      "description": "CLIVO provides a variety of stainless steel material robust solenoid valves for highly corrosive environments in chemical and pharmaceutical processing industries."
     },
     {
-      "id": 5,
-      "name": "Mr. Thomas Weber",
-      "location": "Germany",
-      "text": "Precision engineering at its finest. The PTFE diaphragm valves from CLIVO have performed flawlessly in our pharmaceutical manufacturing lines. German quality standards met with Indian efficiency.",
-      "rating": 5
+      "id": "marine",
+      "name": "Marine",
+      "image": "industry-marine.svg",
+      "description": "Directional control valves from CLIVO are applied in marine applications including horns, whistles, and engine room automation systems requiring reliable operation in harsh marine environments."
+    },
+    {
+      "id": "irrigation",
+      "name": "Irrigation",
+      "image": "industry-irrigation.svg",
+      "description": "Our solenoid valves electromagnetically regulate the flow of water for efficient agricultural and landscape irrigation. Reliable automatic control for water conservation."
     }
   ],
   "stats": {
@@ -182,58 +589,33 @@
     { "name": "CE Certified", "by": "European Standards", "image": "cert-ce.svg" },
     { "name": "ATEX Certified", "by": "Explosion Proof", "image": "cert-atex.svg" },
     { "name": "PESO Approved", "by": "India", "image": "cert-peso.svg" },
-    { "name": "BIS Certified", "by": "Bureau of Indian Standards", "image": "cert-bis.svg" },
+    { "name": "BIS Licensed", "by": "Bureau of Indian Standards", "image": "cert-bis.svg" },
     { "name": "CIMFR Approved", "by": "Mining Safety", "image": "cert-cimfr.svg" }
   ],
-  "industries": [
-    {
-      "id": "oil-gas",
-      "name": "Oil & Gas",
-      "image": "industry-oil-gas.svg",
-      "description": "CLIVO provides rugged solenoid valves and actuators for upstream and downstream oil & gas operations. Our explosion-proof and high-pressure solutions meet API and ATEX standards for safe and reliable flow control in the most demanding environments."
-    },
-    {
-      "id": "power-generation",
-      "name": "Power Generation",
-      "image": "industry-power.svg",
-      "description": "From thermal to renewable power plants, CLIVO's steam valves and pneumatic actuators deliver precise control for turbine cooling, fuel handling, and emission control systems with exceptional durability and zero-leakage performance."
-    },
-    {
-      "id": "food-beverage",
-      "name": "Food & Beverages",
-      "image": "industry-food.svg",
-      "description": "CLIVO's sanitary diaphragm valves and stainless steel solenoid valves meet FDA and EHEDG standards for food and beverage processing. Our hygienic designs ensure contamination-free operation in dairy, brewery, and beverage production lines."
-    },
-    {
-      "id": "chemical-pharma",
-      "name": "Chemical & Pharmaceuticals",
-      "image": "industry-chemical.svg",
-      "description": "Our PTFE-lined and corrosion-resistant solenoid valves are engineered for aggressive chemical media and pharmaceutical-grade applications. CLIVO valves provide precise dosing, isolation, and control in critical processing environments."
-    },
-    {
-      "id": "marine",
-      "name": "Marine & Offshore",
-      "image": "industry-marine.svg",
-      "description": "CLIVO supplies marine-grade solenoid valves and pneumatic systems designed to withstand saltwater corrosion and harsh offshore conditions. DNV and Lloyds approved solutions for ballast control and engine room automation."
-    },
-    {
-      "id": "irrigation",
-      "name": "Irrigation",
-      "image": "industry-irrigation.svg",
-      "description": "High-flow, low-power solenoid valves for agricultural and landscape irrigation systems. CLIVO's irrigation valves offer reliable performance with minimal maintenance, ensuring efficient water management for large-scale farming operations."
-    }
+  "reasons": [
+    "Product Development & Quality Improvement — product quality improvements at each and every level of production",
+    "Quality throughout the System — quality is built into our deliverables and internal operations",
+    "State of Art Facility — all products are manufactured in-house at our vertically integrated plant",
+    "Flexibility & Timely Shipment — accommodate last-minute additions and alterations in the order",
+    "Economies of Scale / Competitive price — producing products faster and at lower cost",
+    "Lean Manufacturing — focused on improving safety, quality, efficiency, and inventory turns"
   ],
   "company": {
+    "name": "CLIVO Automation",
+    "tagline": "We make Automation Solutions for you",
     "email": "sales@clivo.in",
     "phone1": "+91 85110 98822",
     "phone2": "+91 76000 04865",
     "afterSales": "+91 75758 68662",
+    "helpline1": "+91-800 007 8789",
+    "helpline2": "+91-973 796 0009",
     "address": "Ankur Industrial Complex, Shapar (Veraval) 360024, Dist: Rajkot, Gujarat, India",
     "exportCountries": [
-      "United States", "United Kingdom", "Germany", "France", "Australia", "South Africa",
-      "UAE", "Saudi Arabia", "Indonesia", "Nepal", "Singapore", "Malaysia",
+      "United States", "United Kingdom", "Australia", "South Africa", "Germany", "France",
+      "UAE", "Saudi Arabia", "Singapore", "Indonesia", "Nepal", "Malaysia",
       "Egypt", "Kenya", "Nigeria", "Brazil", "Chile", "Thailand", "Vietnam",
-      "South Korea", "Japan", "New Zealand", "Italy", "Spain", "Netherlands"
+      "South Korea", "Japan", "New Zealand", "Italy", "Spain", "Netherlands",
+      "Canada", "China", "Russia", "Qatar", "Kuwait", "Bahrain", "Oman"
     ]
   }
 }
