@@ -10,7 +10,7 @@ async function loadData(){
   buildDropdown();
   renderFooterProducts();
   if(page==='index'){renderIndustries();renderWhy();renderStats();renderCerts();}
-  if(page==='products'){renderTabs();}
+  if(page==='products'){renderTabs();checkHash();}
  }catch(e){console.error('Failed to load:',e);}
 }
 
@@ -27,17 +27,12 @@ const ham=document.getElementById('ham');
 const nav=document.getElementById('nav');
 if(ham&&nav){
  ham.addEventListener('click',()=>{ham.classList.toggle('active');nav.classList.toggle('open')});
- nav.querySelectorAll('.nav-l>li>a').forEach(l=>{l.addEventListener('click',()=>{ham.classList.remove('active');nav.classList.remove('open');document.querySelectorAll('.nav-has-dd,.has-sub').forEach(i=>i.classList.remove('active-mobile'))})});
- // Mobile accordion for dropdowns
- document.querySelectorAll('.nav-has-dd>.nav-l>a, .nav-has-dd>a').forEach(l=>{
+ nav.querySelectorAll('.nav-l>li>a').forEach(l=>{l.addEventListener('click',function(){if(!this.closest('.nav-has-dd')){ham.classList.remove('active');nav.classList.remove('open');}document.querySelectorAll('.has-sub').forEach(i=>i.classList.remove('active-mobile'))})});
+ // Mobile: Products link toggles dropdown; sub-items navigate via hash
+ document.querySelectorAll('.nav-has-dd>a').forEach(l=>{
   l.addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefault();this.parentElement.classList.toggle('active-mobile')}})
  });
- // Also for .has-sub items
- document.addEventListener('click',function(e){
-  if(window.innerWidth<=768&&e.target.closest('.has-sub>a')){
-   e.preventDefault();e.target.closest('.has-sub').classList.toggle('active-mobile');
-  }
- });
+ // Sub-items (.has-sub>a, .has-sub-sub>a) navigate via their href
 }
 
 // ====== SCROLL TOP ======
@@ -62,13 +57,13 @@ function buildDropdown(){
  if(!dd||!D)return;
  dd.innerHTML=D.categories.map(c=>`
   <li class="has-sub">
-   <a href="products.html">${c.icon} ${c.name}</a>
+   <a href="products.html#${c.id}">${c.icon} ${c.name}</a>
    <ul class="dd-sub">
     ${c.series.map(s=>`
      <li class="has-sub-sub">
-      <a href="products.html">${s.name}</a>
+      <a href="products.html#${c.id}/${encodeURIComponent(s.name)}">${s.name}</a>
       <ul class="dd-sub-sub">
-       ${s.products.map(p=>`<li><a href="products.html">${p}</a></li>`).join('')}
+       ${s.products.map(p=>`<li><a href="products.html#${c.id}/${encodeURIComponent(s.name)}/${encodeURIComponent(p)}">${p}</a></li>`).join('')}
       </ul>
      </li>
     `).join('')}
@@ -117,7 +112,7 @@ function renderFooterProducts(){
  const el=document.getElementById('fp');
  if(!el||!D)return;
  el.innerHTML=D.categories.flatMap(c=>
-  c.series.flatMap(s=>s.products.map(p=>`<li><a href="products.html">${p}</a></li>`))
+  c.series.flatMap(s=>s.products.map(p=>`<li><a href="products.html#${c.id}/${encodeURIComponent(s.name)}/${encodeURIComponent(p)}">${p}</a></li>`))
  ).join('');
 }
 
@@ -288,6 +283,16 @@ function renderBreadcrumb(){
    h+=`<span class="ps-bc-sep">›</span><span class="ps-bc-item current">${pn}</span>`;
  }
  el.innerHTML=h;
+}
+
+/** Parse URL hash and navigate to the right category/series/product */
+function checkHash(){
+ const h=location.hash.substring(1);
+ if(!h)return;
+ const parts=h.split('/');
+ if(parts[0])showProducts(parts[0]);
+ if(parts[1]){setTimeout(()=>{showSeriesProducts(parts[0],decodeURIComponent(parts[1]))},100);}
+ if(parts[2]){setTimeout(()=>{showProductDetail(parts[0],decodeURIComponent(parts[1]),decodeURIComponent(parts[2]))},200);}
 }
 
 // ====== CONTACT FORM ======
