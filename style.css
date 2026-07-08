@@ -284,6 +284,18 @@ ul{list-style:none}
 .hs-sn{font-size:1.6rem;font-weight:800;color:var(--navy);line-height:1}
 .hs-sl{font-size:11px;color:var(--gray-500);text-transform:uppercase;letter-spacing:.8px}
 
+/* Dark mode overrides for hero */
+[data-theme="dark"] .hero-split{background:var(--gray-50);border-bottom-color:var(--gray-200)}
+[data-theme="dark"] .hs-content h1{color:#fff}
+[data-theme="dark"] .hs-accent{color:var(--cyan)!important}
+[data-theme="dark"] .hs-tagline{color:var(--gray-300)}
+[data-theme="dark"] .hs-sn{color:var(--gold)}
+[data-theme="dark"] .hs-sl{color:var(--gray-400)}
+[data-theme="dark"] .btn-navy{background:var(--cyan);border-color:var(--cyan)}
+[data-theme="dark"] .btn-navy:hover{background:var(--cyan-dark);border-color:var(--cyan-dark)}
+[data-theme="dark"] .btn-outline{border-color:var(--gray-300);color:var(--gray-300)}
+[data-theme="dark"] .btn-outline:hover{border-color:var(--cyan);color:var(--cyan)}
+
 /* ====== INDUSTRIES SLIDESHOW — Full Width Box ====== */
 .is-section{padding:48px 0 0!important}
 .is-showcase{
