@@ -23,7 +23,7 @@
   --radius: 6px;
   --font: 'Inter', -apple-system, sans-serif;
   --container: 1200px;
-  --nav-h: 58px;
+  --nav-h: 76px;
   --topbar-h: 36px;
 }
 
@@ -82,7 +82,7 @@ ul{list-style:none}
   transition:background .3s;
 }
 .h-inner{display:flex;justify-content:space-between;align-items:center;height:100%}
-.logo img{height:36px;width:auto}
+.logo img{height:68px;width:auto}
 
 /* ====== NAV ====== */
 .nav{display:flex;align-items:center;gap:4px}
@@ -200,6 +200,8 @@ ul{list-style:none}
 .btn-cy:hover{background:var(--cyan-dark);border-color:var(--cyan-dark)}
 .btn-gh{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
 .btn-gh:hover{border-color:var(--gold);color:var(--gold)}
+.btn-navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn-navy:hover{background:var(--navy-dark);border-color:var(--navy-dark)}
 .btn-gold{background:var(--gold);color:var(--navy-dark);border-color:var(--gold)}
 .btn-gold:hover{background:#c4942e;border-color:#c4942e}
 .btn-sm{padding:7px 16px;font-size:12px}
@@ -246,6 +248,82 @@ ul{list-style:none}
 .h-stat:hover{background:rgba(255,255,255,.1)}
 .h-stat-n{font-size:1.8rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:3px}
 .h-stat-l{font-size:12px;color:rgba(255,255,255,.7)}
+
+/* ====== HERO ====== */
+.hero-split{
+  background:var(--white);padding:80px 0 60px;position:relative;overflow:hidden;
+  display:flex;align-items:center;border-bottom:1px solid var(--gray-100);
+}
+
+/* Content - left aligned */
+.hs-content{max-width:750px}
+.hs-content h1{
+  font-size:clamp(2rem,4.5vw,3.5rem);font-weight:800;color:var(--navy);
+  line-height:1.1;margin-bottom:18px;
+}
+.hs-accent{color:var(--navy)!important}
+.hs-tagline{
+  font-size:clamp(.95rem,1.2vw,1.1rem);color:var(--gray-500);
+  line-height:1.75;margin-bottom:30px;max-width:560px;
+}
+
+/* Actions */
+.hs-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+.btn-outline{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  padding:11px 26px;border-radius:var(--radius);
+  font-family:var(--font);font-size:14px;font-weight:600;
+  border:2px solid var(--gray-200);cursor:pointer;transition:.25s;
+  background:var(--white);color:var(--gray-600);
+}
+.btn-outline:hover{border-color:var(--navy);color:var(--navy)}
+
+/* Stats */
+.hs-stats{display:flex;gap:36px;flex-wrap:wrap}
+.hs-stat{display:flex;align-items:baseline;gap:6px}
+.hs-sn{font-size:1.6rem;font-weight:800;color:var(--navy);line-height:1}
+.hs-sl{font-size:11px;color:var(--gray-500);text-transform:uppercase;letter-spacing:.8px}
+
+/* ====== INDUSTRIES SLIDESHOW — Full Width Box ====== */
+.is-section{padding:48px 0 0!important}
+.is-showcase{
+  position:relative;overflow:hidden;width:100%;
+  height:clamp(320px,38vw,480px);background:var(--navy);
+}
+.is-track{display:flex;transition:transform .5s ease;height:100%}
+.is-slide{
+  min-width:100%;height:100%;position:relative;flex-shrink:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background-size:cover;background-position:center;
+}
+.is-slide::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(2,39,91,.88) 30%,rgba(1,26,64,.65));
+}
+.is-slide-content{position:relative;z-index:2;text-align:center;padding:0 30px}
+.is-slide-icon{font-size:3.2rem;margin-bottom:14px;display:block}
+.is-slide h3{font-size:clamp(1.2rem,2vw,1.8rem);font-weight:700;color:#fff;margin-bottom:10px}
+.is-slide p{font-size:clamp(.85rem,1.1vw,1rem);color:rgba(255,255,255,.75);max-width:600px;margin:0 auto;line-height:1.65}
+.is-dots{
+  position:absolute;bottom:18px;left:50%;transform:translateX(-50%);
+  z-index:5;display:flex;gap:6px;
+}
+.is-dot{
+  width:10px;height:10px;border-radius:50%;border:2px solid rgba(255,255,255,.35);
+  background:transparent;cursor:pointer;transition:.3s;padding:0;
+}
+.is-dot.active{background:var(--gold);border-color:var(--gold)}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero-split{padding:50px 0 40px}
+  .hs-content h1{font-size:1.8rem}
+  .hs-tagline{font-size:.9rem}
+  .hs-stats{gap:20px}
+  .hs-sn{font-size:1.3rem}
+  .is-showcase{height:280px}
+  .is-slide-content{padding:0 20px}
+}
 
 /* ====== SECTIONS ====== */
 .section{padding:64px 0}

@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <title>CLIVO Automation | Solenoid Valve Manufacturer In India</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
@@ -32,7 +33,7 @@
   <!-- HEADER -->
   <header class="header">
     <div class="container h-inner">
-      <a href="index.html" class="logo"><img src="images/clivo-logo.svg" alt="CLIVO Automation"></a>
+      <a href="index.html" class="logo"><img src="images/clivo-logo.jpeg" alt="CLIVO Automation"></a>
       <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
       <nav class="nav" id="nav">
         <ul class="nav-l" id="navList">
@@ -54,35 +55,38 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero-split">
     <div class="container">
-      <div class="h-grid">
-        <div class="h-text">
-          <h1>We make <span>Automation Solutions</span> for you.</h1>
-          <p>With new technology and robust service for your success anywhere anytime. CLIVO Automation delivers precision-engineered solenoid valves, pneumatic actuators, and industrial flow control solutions trusted across the globe.</p>
-          <div class="h-cta">
-            <a href="products.html" class="btn btn-cy">Explore Products</a>
-            <a href="contact.html" class="btn btn-gh">Get a Quote</a>
-          </div>
+      <div class="hs-content">
+        <h1>We help you <span class="hs-accent">Automate</span>.</h1>
+        <p class="hs-tagline">Precision solenoid valves, pneumatic actuators, and flow control solutions — engineered for reliability, built for industry.</p>
+        <div class="hs-actions">
+          <a href="products.html" class="btn btn-navy">Explore Products →</a>
+          <a href="contact.html" class="btn btn-outline">Contact Us</a>
         </div>
-        <div class="h-stats">
-          <div class="h-stat"><div class="h-stat-n" data-count="250">0</div><div class="h-stat-l">Products</div></div>
-          <div class="h-stat"><div class="h-stat-n" data-count="500">0</div><div class="h-stat-l">Happy Clients</div></div>
-          <div class="h-stat"><div class="h-stat-n" data-count="12">0</div><div class="h-stat-l">Certificates</div></div>
-          <div class="h-stat"><div class="h-stat-n" data-count="8">0</div><div class="h-stat-l">Awards</div></div>
+        <div class="hs-stats">
+          <div class="hs-stat"><span class="hs-sn" data-count="250">0</span> <span class="hs-sl">Products</span></div>
+          <div class="hs-stat"><span class="hs-sn" data-count="500">0</span> <span class="hs-sl">Happy Clients</span></div>
+          <div class="hs-stat"><span class="hs-sn" data-count="12">0</span> <span class="hs-sl">Certificates</span></div>
+          <div class="hs-stat"><span class="hs-sn" data-count="8">0</span> <span class="hs-sl">Awards</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- INDUSTRIES -->
-  <section class="section s-alt" id="industries">
+  <!-- INDUSTRIES SLIDESHOW - Full Width Box -->
+  <section class="section is-section" id="industries">
     <div class="container">
       <div class="sh">
         <h2 class="st">Industries We Serve</h2>
-        <p class="sd">CLIVO automation solutions are trusted across a diverse range of industries worldwide.</p>
+        <p class="sd">Industries that trust CLIVO automation solutions worldwide.</p>
       </div>
-      <div class="ig" id="ig"></div>
+    </div>
+    <div class="is-showcase" id="isShowcase">
+      <div class="is-track" id="isTrack">
+        <!-- Slides built from JS -->
+      </div>
+      <div class="is-dots" id="isDots"></div>
     </div>
   </section>
 
@@ -200,6 +204,6 @@
   </footer>
 
   <button class="stp" id="stp">↑</button>
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>

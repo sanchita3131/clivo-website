@@ -9,7 +9,7 @@ async function loadData(){
   D=await r.json();
   buildDropdown();
   renderFooterProducts();
-  if(page==='index'){renderIndustries();renderWhy();renderStats();renderCerts();}
+  if(page==='index'){initCarousel();renderIndustries();renderWhy();renderStats();renderCerts();}
   if(page==='products'){renderCategories();checkHash();}
  }catch(e){console.error('Failed to load:',e);}
 }
@@ -41,7 +41,7 @@ if(st){window.addEventListener('scroll',()=>st.classList.toggle('show',window.sc
 
 // ====== COUNTERS ======
 function animC(){
- document.querySelectorAll('.h-stat-n[data-count]').forEach(el=>{
+ document.querySelectorAll('.h-stat-n[data-count], .hs-sn[data-count]').forEach(el=>{
   const t=parseInt(el.dataset.count,10),st=40,inc=t/st;let i=0;
   const ti=setInterval(()=>{i++;el.textContent=Math.min(Math.round(inc*i),t);if(i>=st){el.textContent=t;clearInterval(ti)}},35);
  })
@@ -300,7 +300,77 @@ function checkHash(){
  if(parts[1]){setTimeout(()=>{showSeriesProducts(parts[0],parts[1])},100);}
  if(parts[2]){setTimeout(()=>{showProductDetail(parts[0],parts[1],parts[2])},200);}
 }
-// ====== CONTACT FORM ======
+
+// ====== INDUSTRIES SLIDESHOW ======
+let indTimer = null;
+let indIdx = 0;
+
+function initCarousel(){
+ const track=document.getElementById('isTrack');
+ const dots=document.getElementById('isDots');
+ if(!track||!D||!D.industries)return;
+
+ // Industry images from Unsplash
+ const imgs = {
+  'oil-gas':'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1600&q=90',
+  'power-generation':'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=90',
+  'food-beverage':'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=1600&q=90',
+  'chemical-pharma':'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=1600&q=90',
+  'marine':'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&q=90',
+  'irrigation':'https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?w=1600&q=90'
+ };
+ const icons = {'oil-gas':'🏭','power-generation':'⚡','food-beverage':'🍺','chemical-pharma':'🧪','marine':'🚢','irrigation':'💧'};
+
+ // Build slides
+ track.innerHTML = D.industries.map((ind,i)=>`
+  <div class="is-slide" style="background-image:url('${imgs[ind.id]||'https://picsum.photos/seed/'+ind.id+'/900/400'}')">
+   <div class="is-slide-content">
+    <span class="is-slide-icon">${icons[ind.id]||'🔧'}</span>
+    <h3>${ind.name}</h3>
+    <p>${ind.description}</p>
+   </div>
+  </div>
+ `).join('');
+
+ // Dots
+ dots.innerHTML = D.industries.map((_,i)=>`<button class="is-dot${i===0?' active':''}" data-idx="${i}"></button>`).join('');
+ dots.querySelectorAll('.is-dot').forEach(d=>d.addEventListener('click',function(){
+  goToIndSlide(parseInt(this.dataset.idx));
+ }));
+
+ // Start 1.5s autoplay
+ startIndCarousel();
+}
+
+function goToIndSlide(idx){
+ const slides=document.querySelectorAll('.is-slide');
+ const dots=document.querySelectorAll('.is-dot');
+ const track=document.getElementById('isTrack');
+ if(!slides.length)return;
+ if(idx<0)idx=slides.length-1;
+ if(idx>=slides.length)idx=0;
+ track.style.transform = `translateX(-${idx*100}%)`;
+ dots.forEach(d=>d.classList.remove('active'));
+ dots[idx].classList.add('active');
+ indIdx=idx;
+}
+
+function startIndCarousel(){
+ stopIndCarousel();
+ indTimer=setInterval(()=>{
+  const slides=document.querySelectorAll('.is-slide');
+  if(!slides.length)return;
+  goToIndSlide(indIdx+1);
+ },1500);
+}
+function stopIndCarousel(){if(indTimer){clearInterval(indTimer);indTimer=null;}}
+function restartIndCarousel(){stopIndCarousel();startIndCarousel();}
+
+// Pause on hover
+(function(){
+ const sc=document.getElementById('isShowcase');
+ if(sc){sc.addEventListener('mouseenter',stopIndCarousel);sc.addEventListener('mouseleave',startIndCarousel);}
+})();// ====== CONTACT FORM ======
 (function(){
  const f=document.getElementById('cf');if(!f)return;
  f.setAttribute('action','https://formsubmit.co/sanchitawork31@gmail.com');
