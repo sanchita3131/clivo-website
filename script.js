@@ -160,20 +160,22 @@ const navState = { categoryId: null, seriesName: null, productName: null };
 function renderCategories(){
  const pg=document.getElementById('pg');if(!pg||!D)return;
  navState.categoryId=null;navState.seriesName=null;navState.productName=null;
- let h=`<div class="ps-header"><div class="ps-header-icon">📋</div><div class="ps-header-text"><h2>Our Products</h2><p>${D.categories.length} categories · Browse our full range</p></div></div>`;
- h+=`<div class="ps-section-title">Product Categories</div><div class="ps-cat-grid">`;
+ let h=`<div class="ps-header"><div class="ps-header-icon">📋</div><div class="ps-header-text"><h2>All Products</h2><p>${D.categories.length} categories · Browse our full range</p></div></div>`;
+ h+=`<div class="pg">`;
  D.categories.forEach(c=>{
    const total=c.series.reduce((t,s)=>t+s.products.length,0);
-   h+=`<div class="ps-cat-card" data-c="${c.id}">
-     <div class="ps-cat-icon">${c.icon}</div>
-     <h3>${c.name}</h3>
-     <p>${c.series.length} series · ${total} products</p>
-     <span class="ps-cat-count">Explore →</span>
+   h+=`<div class="pc" data-c="${c.id}" style="cursor:pointer;">
+     <img src="images/placeholder-product.svg" alt="${c.name}" loading="lazy">
+     <div class="pc-bd">
+       <h3>${c.icon} ${c.name}</h3>
+       <p style="font-size:.82rem;color:var(--gray-500);margin-top:4px;">${c.series.length} series · ${total} products</p>
+       <span class="pb">View Products →</span>
+     </div>
    </div>`;
  });
  h+=`</div>`;
  pg.innerHTML=h;
- pg.querySelectorAll('.ps-cat-card').forEach(c=>c.addEventListener('click',function(){showProducts(this.dataset.c)}));
+ pg.querySelectorAll('.pc[data-c]').forEach(c=>c.addEventListener('click',function(){showProducts(this.dataset.c)}));
  renderSidebar();renderBreadcrumb();
 }
 
@@ -265,7 +267,7 @@ function renderSidebar(){
    }).join('');
 }
 
-// ---- BREADCRUMB ----
+// ---- BREADCRUMB (data-attributes, no inline onclick) ----
 function renderBreadcrumb(){
  const el=document.getElementById('psBreadcrumb');
  if(!el||!D)return;
@@ -273,17 +275,20 @@ function renderBreadcrumb(){
  const cName=cat?cat.name:'';const cIcon=cat?cat.icon:'';
  let h=`<span class="ps-bc-item"><a href="index.html"><b>Home</b></a></span><span class="ps-bc-sep">›</span><span class="ps-bc-item"><a href="products.html"><b>Products</b></a></span>`;
  if(cName){
-   h+=`<span class="ps-bc-sep">›</span><span class="ps-bc-item${navState.seriesName?'':' current'}"><a href="#" onclick="event.preventDefault();showProducts('${navState.categoryId}')">${cIcon} ${cName}</a></span>`;
+   h+=`<span class="ps-bc-sep">›</span><span class="ps-bc-item${navState.seriesName?'':' current'}"><a href="#" data-bc="cat">${cIcon} ${cName}</a></span>`;
  }
  if(navState.seriesName){
    const sn=navState.seriesName.length>35?navState.seriesName.substring(0,35)+'...':navState.seriesName;
-   h+=`<span class="ps-bc-sep">›</span><span class="ps-bc-item${navState.productName?'':' current'}"><a href="#" onclick="event.preventDefault();showSeriesProducts('${navState.categoryId}','${navState.seriesName.replace(/'/g,"\'")}')">${sn}</a></span>`;
+   h+=`<span class="ps-bc-sep">›</span><span class="ps-bc-item${navState.productName?'':' current'}"><a href="#" data-bc="series">${sn}</a></span>`;
  }
  if(navState.productName){
    const pn=navState.productName.length>45?navState.productName.substring(0,45)+'...':navState.productName;
    h+=`<span class="ps-bc-sep">›</span><span class="ps-bc-item current">${pn}</span>`;
  }
  el.innerHTML=h;
+ // Attach click handlers via data attributes
+ el.querySelectorAll('a[data-bc="cat"]').forEach(a=>a.addEventListener('click',function(e){e.preventDefault();showProducts(navState.categoryId)}));
+ el.querySelectorAll('a[data-bc="series"]').forEach(a=>a.addEventListener('click',function(e){e.preventDefault();showSeriesProducts(navState.categoryId,navState.seriesName)}));
 }
 
 /** Parse URL hash to navigate to category/series/product */
