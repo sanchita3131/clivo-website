@@ -375,23 +375,28 @@ function restartIndCarousel(){stopIndCarousel();startIndCarousel();}
  const f=document.getElementById('cf');if(!f)return;
  f.setAttribute('action','https://formsubmit.co/sanchitawork31@gmail.com');
  f.setAttribute('method','POST');
+ // FormSubmit required fields
  if(!f.querySelector('input[name="_captcha"]')){const i=document.createElement('input');i.type='hidden';i.name='_captcha';i.value='false';f.appendChild(i)}
- f.addEventListener('submit',async(e)=>{
-  e.preventDefault();const btn=f.querySelector('button[type="submit"]'),orig=btn.textContent;
-  btn.textContent='Sending...';btn.disabled=true;
-  try{
-   const fd=new FormData(f),data=new URLSearchParams();
-   fd.forEach((v,k)=>data.append(k,v));
-   const r=await fetch(f.getAttribute('action'),{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:data.toString()});
-   if(r.ok||r.status===200){
-    toast('✅ Message sent! We\'ll respond within 24 hours.','s');f.reset();
-    const w=f.parentElement,su=document.createElement('div');
+ if(!f.querySelector('input[name="_next"]')){const i=document.createElement('input');i.type='hidden';i.name='_next';i.value=window.location.href.split('?')[0]+'?sent=1';f.appendChild(i)}
+ // Native form submit — browser handles POST directly
+ f.addEventListener('submit',function(){
+  const btn=f.querySelector('button[type="submit"]');
+  if(btn){btn.textContent='Sending...';btn.disabled=true;}
+ });
+ // Check if redirected back after successful submission
+ if(window.location.search.includes('sent=1')){
+  const f=document.getElementById('cf');
+  if(f){
+   const w=f.parentElement;
+   if(!w.querySelector('.fsu')){
+    const su=document.createElement('div');
     su.className='fsu show';su.innerHTML='<div class="fsu-ic">✅</div><h3>Thank You!</h3><p>Your message has been sent. We\'ll respond within 24 business hours.</p>';
     f.style.display='none';w.appendChild(su);
-   }else throw Error('HTTP '+r.status);
-  }catch(e){toast('❌ Could not send. Email us at sales@clivo.in','e')}
-  finally{btn.textContent=orig;btn.disabled=false}
- });
+    // Clean URL
+    window.history.replaceState({},document.title,window.location.pathname);
+   }
+  }
+ }
 })();
 
 // ====== NEWSLETTER ======
