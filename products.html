@@ -6,7 +6,7 @@
   <title>Our Products | CLIVO Automation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -63,8 +63,27 @@
   <!-- PRODUCTS -->
   <section class="section s-alt">
     <div class="container">
+
+      <!-- Category tabs (existing, kept as-is) -->
       <div class="ct" id="ct"></div>
-      <div class="pg" id="pg"></div>
+
+      <!-- Sidebar + Main content -->
+      <div class="ps-layout">
+        <!-- LEFT SIDEBAR -->
+        <aside class="ps-sidebar">
+          <div class="ps-nav-header">📋 Our Products</div>
+          <ul class="ps-tree" id="psTree"></ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="ps-content">
+          <!-- Breadcrumb -->
+          <nav class="ps-breadcrumb" id="psBreadcrumb"></nav>
+          <!-- Dynamic product area -->
+          <div class="ps-main" id="pg"></div>
+        </main>
+      </div>
+
     </div>
   </section>
 
@@ -120,6 +139,6 @@
   </footer>
 
   <button class="stp" id="stp">↑</button>
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>

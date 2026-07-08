@@ -158,7 +158,9 @@ function renderCerts(){
  ob(g);
 }
 
-// ====== PRODUCT TABS + GRID ======
+// ====== PRODUCT TABS + SIDEBAR + BREADCRUMB + DETAIL ======
+const navState = { categoryId: null, seriesName: null, productName: null };
+
 function renderTabs(){
  const ct=document.getElementById('ct');const pg=document.getElementById('pg');
  if(!ct||!pg||!D)return;
@@ -166,16 +168,126 @@ function renderTabs(){
  showProducts(D.categories[0]?.id);
  ct.querySelectorAll('.ctb').forEach(t=>{t.addEventListener('click',()=>{ct.querySelectorAll('.ctb').forEach(x=>x.classList.remove('active'));t.classList.add('active');showProducts(t.dataset.c)})});
 }
+
+// ---- VIEW: Category (series cards + all products) ----
 function showProducts(id){
  const pg=document.getElementById('pg');if(!pg||!D)return;
  const cat=D.categories.find(c=>c.id===id);
- if(!cat||!cat.series||!cat.series.length){pg.innerHTML='<p style="text-align:center;grid-column:1/-1;padding:32px;color:var(--gray-400);">No products in this category.</p>';return}
- // Flatten series into individual products
- const allProducts=[];
- cat.series.forEach(s=>s.products.forEach(p=>allProducts.push({name:p,series:s.name})));
- if(!allProducts.length){pg.innerHTML='<p style="text-align:center;grid-column:1/-1;padding:32px;color:var(--gray-400);">No products in this category.</p>';return}
- pg.innerHTML=allProducts.map(p=>`<div class="pc"><img src="images/placeholder-product.svg" alt="${p.name}" loading="lazy"><div class="pc-bd"><h3>${p.name}</h3><span class="pb">${p.series}</span></div></div>`).join('');
- ob(pg);
+ if(!cat||!cat.series||!cat.series.length){pg.innerHTML='<p style="text-align:center;padding:32px;color:var(--gray-400);">No products in this category.</p>';return}
+ navState.categoryId=id;navState.seriesName=null;navState.productName=null;
+
+ // Header
+ let h=`<div class="ps-header"><div class="ps-header-icon">${cat.icon}</div><div class="ps-header-text"><h2>${cat.name}</h2><p>${cat.series.reduce((t,s)=>t+s.products.length,0)} products across ${cat.series.length} series</p></div></div>`;
+
+ // Series cards
+ h+=`<div class="ps-section-title">Browse by Series</div><div class="ps-series-grid">`;
+ cat.series.forEach(s=>{h+=`<div class="ps-series-card" data-c="${cat.id}" data-s="${s.name.replace(/'/g,"\\'")}"><h3>${s.name}</h3><p>${s.products.length} product${s.products.length>1?'s':''}</p><span class="ps-series-count">${s.products.length} items</span></div>`});
+ h+=`</div>`;
+
+ // All products
+ const all=[];
+ cat.series.forEach(s=>s.products.forEach(p=>all.push({name:p,series:s.name})));
+ h+=`<div class="ps-section-title" style="margin-top:22px;">All Products <span>(${all.length})</span></div><div class="pg">`;
+ h+=all.map(p=>`<div class="pc"><img src="images/placeholder-product.svg" alt="${p.name}" loading="lazy"><div class="pc-bd"><h3>${p.name}</h3><span class="pb">${p.series}</span></div></div>`).join('');
+ h+=`</div>`;
+ pg.innerHTML=h;
+
+ // Click: series card → show that series
+ pg.querySelectorAll('.ps-series-card').forEach(c=>c.addEventListener('click',function(){showSeriesProducts(this.dataset.c,this.dataset.s)}));
+ // Click: product card → show product detail
+ pg.querySelectorAll('.pc').forEach(c=>c.addEventListener('click',function(){showProductDetail(navState.categoryId,this.querySelector('.pb').textContent,this.querySelector('h3').textContent)}));
+ // Animate
+ pg.querySelectorAll('.pc').forEach((c,i)=>{c.classList.add('fi');c.style.transitionDelay=i*.03+'s';fo.observe(c)});
+ renderSidebar();renderBreadcrumb();
+}
+
+// ---- VIEW: Series (products in one series) ----
+function showSeriesProducts(catId,seriesName){
+ const pg=document.getElementById('pg');if(!pg||!D)return;
+ const cat=D.categories.find(c=>c.id===catId);if(!cat)return;
+ const series=cat.series.find(s=>s.name===seriesName);if(!series){showProducts(catId);return}
+ navState.categoryId=catId;navState.seriesName=seriesName;navState.productName=null;
+ document.querySelectorAll('.ctb').forEach(t=>t.classList.toggle('active',t.dataset.c===catId));
+
+ let h=`<div class="ps-header"><div class="ps-header-icon">${cat.icon}</div><div class="ps-header-text"><h2>${series.name}</h2><p>${series.products.length} product${series.products.length>1?'s':''} in ${cat.name}</p></div></div>`;
+ h+=`<button class="ps-back-btn" style="margin-bottom:14px;width:auto" onclick="showProducts('${catId}')">← Back to ${cat.name}</button>`;
+ h+=`<div style="margin-bottom:16px"><img src="images/placeholder-product.svg" alt="${series.name}" style="width:100%;max-height:180px;object-fit:cover;border-radius:8px;"></div>`;
+ h+=`<div class="ps-section-title">Products</div><div class="pg">`;
+ h+=series.products.map(p=>`<div class="pc"><img src="images/placeholder-product.svg" alt="${p}" loading="lazy"><div class="pc-bd"><h3>${p}</h3><span class="pb">${series.name}</span></div></div>`).join('');
+ h+=`</div>`;
+ pg.innerHTML=h;
+ pg.querySelectorAll('.pc').forEach(c=>c.addEventListener('click',function(){showProductDetail(catId,seriesName,this.querySelector('h3').textContent)}));
+ pg.querySelectorAll('.pc').forEach((c,i)=>{c.classList.add('fi');c.style.transitionDelay=i*.03+'s';fo.observe(c)});
+ renderSidebar();renderBreadcrumb();
+}
+
+// ---- VIEW: Product detail (sub-images gallery) ----
+function showProductDetail(catId,seriesName,productName){
+ const pg=document.getElementById('pg');if(!pg||!D)return;
+ const cat=D.categories.find(c=>c.id===catId);if(!cat)return;
+ const series=cat.series.find(s=>s.name===seriesName);if(!series||!productName){showSeriesProducts(catId,seriesName);return}
+ navState.categoryId=catId;navState.seriesName=seriesName;navState.productName=productName;
+ document.querySelectorAll('.ctb').forEach(t=>t.classList.toggle('active',t.dataset.c===catId));
+
+ let h=`<div class="ps-header"><div class="ps-header-icon">${cat.icon}</div><div class="ps-header-text"><h2>${productName.length>50?productName.substring(0,50)+'...':productName}</h2><p>${seriesName} · ${cat.name}</p></div></div>`;
+ h+=`<button class="ps-back-btn" style="margin-bottom:14px;width:auto" onclick="showSeriesProducts('${catId}','${seriesName.replace(/'/g,"\\'")}')">← Back to ${seriesName}</button>`;
+ // Sub-images gallery (4 demo placeholders)
+ h+=`<div class="ps-section-title">Product Images</div><div class="ps-img-grid">`;
+ for(let i=1;i<=4;i++){h+=`<div class="ps-img-card"><img src="images/placeholder-product.svg" alt="View ${i}" loading="lazy"><span>View ${i}</span></div>`}
+ h+=`</div>`;
+ // Details
+ h+=`<div class="ps-section-title">Product Details</div><div class="ps-detail-box">
+   <p><strong>Product:</strong> ${productName}</p>
+   <p><strong>Series:</strong> ${seriesName}</p>
+   <p><strong>Category:</strong> ${cat.icon} ${cat.name}</p>
+   <p style="margin-top:10px;">Detailed specifications and technical drawings available on request. Contact our sales team for more information.</p>
+ </div>`;
+ pg.innerHTML=h;
+ renderSidebar();renderBreadcrumb();
+}
+
+// ---- SIDEBAR TREE ----
+function renderSidebar(){
+ const tree=document.getElementById('psTree');
+ if(!tree||!D)return;
+ tree.innerHTML=`<li><a class="ps-home-link" href="index.html">🏠 Home</a></li>`+
+   D.categories.map(c=>{
+     const isActive=c.id===navState.categoryId;
+     let sHtml='';
+     c.series.forEach(s=>{
+       const sActive=isActive&&s.name===navState.seriesName;
+       const pActive=sActive&&s.products.some(p=>p===navState.productName);
+       sHtml+=`<li><a class="ps-series-link${sActive?' active':''}" href="#" onclick="event.preventDefault();showSeriesProducts('${c.id}','${s.name.replace(/'/g,"\\'")}')">${s.name}</a></li>`;
+       if(sActive||pActive){
+         s.products.forEach(p=>{
+           const isPActive=sActive&&p===navState.productName;
+           sHtml+=`<li><a class="ps-prod-link${isPActive?' active':''}" href="#" onclick="event.preventDefault();showProductDetail('${c.id}','${s.name.replace(/'/g,"\\'")}','${p.replace(/'/g,"\\'")}')">${p.length>28?p.substring(0,28)+'...':p}</a></li>`;
+         });
+       }
+     });
+     return `<li><a class="ps-cat-link${isActive?' active':''}" href="#" onclick="event.preventDefault();document.querySelectorAll('.ctb').forEach(t=>t.classList.toggle('active',t.dataset.c==='${c.id}'));showProducts('${c.id}')">${c.icon} ${c.name}</a></li>`+sHtml;
+   }).join('');
+}
+
+// ---- BREADCRUMB ----
+function renderBreadcrumb(){
+ const el=document.getElementById('psBreadcrumb');
+ if(!el||!D)return;
+ const cat=D.categories.find(c=>c.id===navState.categoryId);
+ const cName=cat?cat.name:'';const cIcon=cat?cat.icon:'';
+ let h=`<span class="ps-bc-item"><a href="index.html"><b>Home</b></a></span><span class="ps-bc-sep">›</span><span class="ps-bc-item"><a href="products.html"><b>Products</b></a></span>`;
+ if(cName){
+   h+=`<span class="ps-bc-sep">›</span><span class="ps-bc-item${navState.seriesName?'':' current'}"><a href="#" onclick="event.preventDefault();showProducts('${navState.categoryId}')">${cIcon} ${cName}</a></span>`;
+ }
+ if(navState.seriesName){
+   const sn=navState.seriesName.length>35?navState.seriesName.substring(0,35)+'...':navState.seriesName;
+   h+=`<span class="ps-bc-sep">›</span><span class="ps-bc-item${navState.productName?'':' current'}"><a href="#" onclick="event.preventDefault();showSeriesProducts('${navState.categoryId}','${navState.seriesName.replace(/'/g,"\\'")}')">${sn}</a></span>`;
+ }
+ if(navState.productName){
+   const pn=navState.productName.length>45?navState.productName.substring(0,45)+'...':navState.productName;
+   h+=`<span class="ps-bc-sep">›</span><span class="ps-bc-item current">${pn}</span>`;
+ }
+ el.innerHTML=h;
 }
 
 // ====== CONTACT FORM ======
